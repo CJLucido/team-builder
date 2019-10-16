@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
 import Form from "./components/Atoms/Form"
+import MemberCard from "./components/Atoms/MemberCard"
 
 function App() {
    const [teamList, setTeamList] = useState([]);
@@ -13,6 +14,7 @@ function App() {
     <div className="App">
      <h1>Hello World</h1>
      <Form addNewMember={addNewMember}/>
+     <MemberCard teamList={teamList}/>
     </div>
   );
 }
