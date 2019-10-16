@@ -20,7 +20,7 @@ const submitForm = event => {
 }
 
 const changeHandleInput = event => {
-    setTeamMember({[event.target.name]:event.target.value} )
+    setTeamMember({...teamMember, [event.target.name]:event.target.value} )
 }
 
     return (
