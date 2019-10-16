@@ -1,7 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
 
 
 function Form(){
+    const [teamMember, setTeamMember] = useState({
+        name: "",
+        email: "",
+        role: ""
+    });
+
+
 
     return (
     <div>
@@ -15,7 +22,7 @@ function Form(){
 
         <label htmlFor="role">Position: </label>
         <input id="role" name="role" placeholder="Type your role here" type="text"/>
-        
+
     </div>
     )
 }
