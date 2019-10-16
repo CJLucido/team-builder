@@ -1,14 +1,23 @@
 import React, {useState} from "react";
 
 
-function Form(){
+
+function Form(props){
     const [teamMember, setTeamMember] = useState({
         name: "",
         email: "",
         role: ""
     });
 
-
+const submitForm = event => {
+    event.preventDefault();
+    props.addNewMember(teamMember)
+    setTeamMember({
+        name: "",
+        email: "",
+        role: ""
+    })
+}
 
     return (
     <div>
