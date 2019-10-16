@@ -1,8 +1,18 @@
 import React, {useState} from "react";
+import styled from 'styled-components'
+import {Formik, Field, Form} from "formik"
+
+const StyledForm = styled.div`
+        background: brown;
+        color: white;
+        padding: 1vh;
+        width: 800px;
+
+`
 
 
 
-function Form(props){
+function FormComp(props){
     const [teamMember, setTeamMember] = useState({
         name: "",
         email: "",
@@ -24,9 +34,9 @@ const changeHandleInput = event => {
 }
 
     return (
-    <div>
+    <StyledForm>
         <h1>Form</h1>
-        <form onSubmit={submitForm}>
+        <Form onSubmit={submitForm}>
             <label htmlFor="name">Name: </label>
             <input id="name" name="name" placeholder="Type your name here" type="text" onChange={changeHandleInput} value={teamMember.name}/>
 
@@ -38,10 +48,10 @@ const changeHandleInput = event => {
 
             <button type="submit">Welcome to the Team!</button>
             {console.log(teamMember)}
-        </form>
-    </div>
+        </Form>
+    </StyledForm>
     )
 }
 
 
-export default Form
+export default FormComp

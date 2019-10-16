@@ -1,4 +1,14 @@
 import React from 'react';
+import styled from 'styled-components'
+
+const StyledForm = styled.div`
+        background: brown;
+        color: white;
+        padding: 1vh
+
+`
+
+
 
 
 function MemberCard(props){
@@ -8,14 +18,16 @@ function MemberCard(props){
                 
               {  
                return (
-                <div key={index}> 
-                    <form onSubmit={chooseMember}>
+                
+                    <StyledForm key={index}>
+                    <form onSubmit={props.chooseMember}>
                         <h1>{member.name}</h1>
                         <h4>{member.email}</h4>
                         <h1>{member.role}</h1>
                         <button type="submit">Edit</button>
                     </form>
-                </div>
+                    </StyledForm>
+                
             )}
             
             )}
