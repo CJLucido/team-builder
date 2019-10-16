@@ -19,18 +19,25 @@ const submitForm = event => {
     })
 }
 
+const changeHandleInput = event => {
+    setTeamMember({[event.target.name]:event.target.value} )
+}
+
     return (
     <div>
         <h1>Form</h1>
         <form onSubmit={submitForm}>
             <label htmlFor="name">Name: </label>
-            <input id="name" name="name" placeholder="Type your name here" type="text"/>
+            <input id="name" name="name" placeholder="Type your name here" type="text" onChange={changeHandleInput} value={teamMember.name}/>
 
             <label htmlFor="email">Email: </label>
-            <input id="email" name="email" placeholder="Type your email here" type="text"/>
+            <input id="email" name="email" placeholder="Type your email here" type="text" onChange={changeHandleInput} value={teamMember.email}/>
 
             <label htmlFor="role">Position: </label>
-            <input id="role" name="role" placeholder="Type your role here" type="text"/>
+            <input id="role" name="role" placeholder="Type your role here" type="text" onChange={changeHandleInput} value={teamMember.role}/>
+
+            <button type="submit">Welcome to the Team!</button>
+            {console.log(teamMember)}
         </form>
     </div>
     )
