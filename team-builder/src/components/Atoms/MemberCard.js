@@ -9,9 +9,12 @@ function MemberCard(props){
               {  
                return (
                 <div key={index}> 
-                    <h1>{member.name}</h1>
-                    <h4>{member.email}</h4>
-                    <h1>{member.role}</h1>
+                    <form onSubmit={chooseMember}>
+                        <h1>{member.name}</h1>
+                        <h4>{member.email}</h4>
+                        <h1>{member.role}</h1>
+                        <button type="submit">Edit</button>
+                    </form>
                 </div>
             )}
             
