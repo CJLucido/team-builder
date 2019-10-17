@@ -7,7 +7,7 @@ const validate = ({name, email, role}) => {
 
     if(!name){
         errors.name = "You need a name!"
-    }else if (name.includes(/\d+/)){
+    }else if (name.match(/\d+/)){ //can't use includes! have to use match
         errors.name = "You don't have numbers in your name!"
     }
 
